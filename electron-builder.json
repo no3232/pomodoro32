@@ -1,0 +1,30 @@
+{
+  "appId": "com.no32.electron",
+  "files": ["dist-electron/**/*", "dist-react/**/*"],
+  "directories": {
+    "output": "dist",
+    "buildResources": "build"
+  },
+  "extraResources": [
+    {
+      "from": "dist-react",
+      "to": "dist-react",
+      "filter": ["**/*"]
+    },
+    {
+      "from": "dist-electron/preload.mjs",
+      "to": "dist-electron/preload.mjs"
+    }
+  ],
+  "icon": "./icon.png",
+  "mac": {
+    "target": "dmg"
+  },
+  "win": {
+    "target": ["portable", "msi"]
+  },
+  "linux": {
+    "target": ["AppImage"],
+    "category": "Utility"
+  }
+}
